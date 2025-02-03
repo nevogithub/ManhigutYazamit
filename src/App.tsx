@@ -17,27 +17,14 @@ const currentUser: User = {
 };
 
 // Sample debate topics
-const israeliPoliticalTopics = [
-  'Should the judicial reform proceed as proposed?',
-  'How should Israel approach the two-state solution?',
-  'What role should religion play in state affairs?',
-  'Should military service exemptions for Haredi Jews be maintained?',
-  'How should Israel balance security needs with civil liberties?',
-  'Should public transportation be allowed on Shabbat nationwide?',
-  'What should be Israel\'s settlement policy in the West Bank?',
-  'How should Israel address the cost of living crisis?',
-  'Should the nation-state law be modified or repealed?',
-  'What should be the status of non-Orthodox conversions in Israel?'
-];
+const israeliPoliticalTopics = ['הרפורמה המשפטית'];
 
 function App() {
   const [isMatching, setIsMatching] = useState(false);
   const [activeRoom, setActiveRoom] = useState<DebateRoomType | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
-  const [currentTopic] = useState(
-    israeliPoliticalTopics[Math.floor(Math.random() * israeliPoliticalTopics.length)]
-  );
+  const [currentTopic] = useState(israeliPoliticalTopics[0]);
   const [userResponse, setUserResponse] = useState<QuestionnaireResponse | null>(null);
 
   const handleStartMatching = () => {
